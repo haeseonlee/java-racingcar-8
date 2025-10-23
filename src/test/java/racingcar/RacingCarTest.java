@@ -22,4 +22,10 @@ public class RacingCarTest {
 
         assertEquals(expected, CarNameParser.parse(input));
     }
+
+    @Test
+    void 자동차_이름_5자_넘으면_예외_발생() {
+        assertThrows(IllegalArgumentException.class, () ->
+                new Car("oniiiii"));
+    }
 }
