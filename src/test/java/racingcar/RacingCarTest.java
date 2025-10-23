@@ -3,6 +3,8 @@ package racingcar;
 import org.junit.jupiter.api.Test;
 import racingcar.util.Validator;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RacingCarTest {
@@ -11,5 +13,13 @@ public class RacingCarTest {
     void 입력값_공백_예외_발생() {
         assertThrows(IllegalArgumentException.class, () ->
                 Validator.validateEmptyInput(""));
+    }
+
+    @Test
+    void 자동차_이름_저장_기능_테스트() {
+        String input = "pobi,woni,jun";
+        List<String> expected = List.of("pobi", "woni", "jun");
+
+        assertEquals(expected, CarNameParser.parse(input));
     }
 }
