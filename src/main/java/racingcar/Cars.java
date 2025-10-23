@@ -1,8 +1,13 @@
 package racingcar;
 
+import camp.nextstep.edu.missionutils.Randoms;
+
 import java.util.List;
 
 public class Cars {
+
+    private static final int MIN_RANDOM_NUMBER = 0;
+    private static final int MAX_RANDOM_NUMBER = 9;
 
     private final List<Car> cars;
 
@@ -18,5 +23,12 @@ public class Cars {
 
     public List<Car> getCars() {
         return cars;
+    }
+
+    public void moveAll() {
+        for (Car car : cars) {
+            int randomNumber = Randoms.pickNumberInRange(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+            car.move(randomNumber);
+        }
     }
 }
