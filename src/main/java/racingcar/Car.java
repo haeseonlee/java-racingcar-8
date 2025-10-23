@@ -5,8 +5,6 @@ import racingcar.util.ErrorMessage;
 
 public class Car {
 
-    private static final int MIN_RANDOM_NUMBER = 0;
-    private static final int MAX_RANDOM_NUMBER = 9;
     private static final int FORWARD_NUMBER = 4;
     private static final int MAX_NAME_LENGTH = 5;
 
@@ -26,8 +24,7 @@ public class Car {
         return position;
     }
 
-    public void move() {
-        int randomNumber = Randoms.pickNumberInRange(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
+    public void move(int randomNumber) {
         if (randomNumber >= FORWARD_NUMBER) {
             this.position++;
         }
