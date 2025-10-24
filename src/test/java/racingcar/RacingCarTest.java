@@ -35,4 +35,9 @@ public class RacingCarTest {
                 Validator.validateMoreThanOne(0));
     }
 
+    @Test
+    void 시도횟수가_숫자가_아닌_경우_예외_발생() {
+        assertThrows(IllegalArgumentException.class, () ->
+                NumberConverter.convert("a"));
+    }
 }
