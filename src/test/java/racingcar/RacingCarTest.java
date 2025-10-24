@@ -46,4 +46,10 @@ public class RacingCarTest {
         assertThrows(IllegalArgumentException.class, () ->
                 Validator.validateStringInput("123"));
     }
+
+    @Test
+    void 입력값이_구분자로_끝나는_경우_예외_발생() {
+        assertThrows(IllegalArgumentException.class, () ->
+                Validator.validateEndWithComma("pobi,woni,jun,"));
+    }
 }
