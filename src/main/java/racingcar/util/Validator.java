@@ -7,6 +7,7 @@ public class Validator {
     private static final int MIN_TRY_NUMBER = 1;
     private static final int MIN_CAR_COUNT = 2;
     private static final String COMMA_DELIMITER = ",";
+    private static final String NUMBER_PATTERN = "\\d+";
 
     public static void validateNotEmptyInput(String input) {
         if (input == null || input.isEmpty()) {
@@ -21,7 +22,7 @@ public class Validator {
     }
 
     public static void validateStringInput(String input) {
-        if (input.matches("\\d+")) {
+        if (input.matches(NUMBER_PATTERN)) {
             throw new IllegalArgumentException(ErrorMessage.NOT_STRING_INPUT.getMessage());
         }
     }
