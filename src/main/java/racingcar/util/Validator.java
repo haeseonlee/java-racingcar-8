@@ -5,7 +5,7 @@ public class Validator {
     private static final int MIN_TRY_NUMBER = 1;
     private static final String COMMA_DELIMITER = ",";
 
-    public static void validateEmptyInput(String input) {
+    public static void validateNotEmptyInput(String input) {
         if (input == null || input.isEmpty()) {
             throw new IllegalArgumentException(ErrorMessage.EMPTY_INPUT.getMessage());
         }
@@ -23,7 +23,7 @@ public class Validator {
         }
     }
 
-    public static void validateEndWithComma(String input) {
+    public static void validateNotEndWithComma(String input) {
         if (input.trim().endsWith(COMMA_DELIMITER)) {
             throw new IllegalArgumentException(ErrorMessage.END_WITH_COMMA.getMessage());
         }
