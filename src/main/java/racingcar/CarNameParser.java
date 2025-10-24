@@ -16,6 +16,6 @@ public class CarNameParser {
     }
 
     private static void validateNotEndWithDelimiter(String input) {
-        Validator.validateEndWithComma(input);
+        Validator.validateNotEndWithComma(input);
     }
 }

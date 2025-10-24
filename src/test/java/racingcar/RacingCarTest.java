@@ -12,7 +12,7 @@ public class RacingCarTest {
     @Test
     void 입력값_공백_예외_발생() {
         assertThrows(IllegalArgumentException.class, () ->
-                Validator.validateEmptyInput(""));
+                Validator.validateNotEmptyInput(""));
     }
 
     @Test
@@ -50,6 +50,6 @@ public class RacingCarTest {
     @Test
     void 입력값이_구분자로_끝나는_경우_예외_발생() {
         assertThrows(IllegalArgumentException.class, () ->
-                Validator.validateEndWithComma("pobi,woni,jun,"));
+                Validator.validateNotEndWithComma("pobi,woni,jun,"));
     }
 }

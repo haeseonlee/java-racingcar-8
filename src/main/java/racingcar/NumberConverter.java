@@ -17,7 +17,7 @@ public class NumberConverter {
     }
 
     private static void requireTryNumberInput(String input) {
-        Validator.validateEmptyInput(input);
+        Validator.validateNotEmptyInput(input);
     }
 
     private static void requireTryNumberAtLeastOne(int tryNumber) {
