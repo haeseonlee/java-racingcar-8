@@ -52,4 +52,10 @@ public class RacingCarTest {
         assertThrows(IllegalArgumentException.class, () ->
                 Validator.validateNotEndWithComma("pobi,woni,jun,"));
     }
+
+    @Test
+    void 자동차_2대_미만이면_예외_발생() {
+        assertThrows(IllegalArgumentException.class, () ->
+                Validator.validateEnoughCars(List.of("pobi")));
+    }
 }
