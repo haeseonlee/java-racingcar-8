@@ -6,7 +6,6 @@ import racingcar.util.Validator;
 public class Car {
 
     private static final int FORWARD_NUMBER = 4;
-    private static final int MAX_NAME_LENGTH = 5;
 
     private final String name;
     private int position;
@@ -32,9 +31,7 @@ public class Car {
     }
 
     private void validateNameLength(String name) {
-        if (name.length() > MAX_NAME_LENGTH) {
-            throw new IllegalArgumentException(ErrorMessage.MORE_THAN_FIVE_CHAR.getMessage());
-        }
+        Validator.validateNameLengthFive(name);
     }
 
     private void validateCarNameFormat(String name) {

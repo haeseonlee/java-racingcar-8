@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Validator {
 
+    private static final int MAX_NAME_LENGTH = 5;
     private static final int MIN_TRY_NUMBER = 1;
     private static final int MIN_CAR_COUNT = 2;
     private static final String COMMA_DELIMITER = ",";
@@ -12,6 +13,12 @@ public class Validator {
     public static void validateNotEmptyInput(String input) {
         if (input == null || input.isEmpty()) {
             throw new IllegalArgumentException(ErrorMessage.EMPTY_INPUT.getMessage());
+        }
+    }
+
+    public static void validateNameLengthFive(String name) {
+        if (name.length() > MAX_NAME_LENGTH) {
+            throw new IllegalArgumentException(ErrorMessage.MORE_THAN_FIVE_CHAR.getMessage());
         }
     }
 
