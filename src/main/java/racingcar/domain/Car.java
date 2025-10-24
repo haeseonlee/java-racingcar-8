@@ -1,6 +1,5 @@
-package racingcar;
+package racingcar.domain;
 
-import camp.nextstep.edu.missionutils.Randoms;
 import racingcar.util.ErrorMessage;
 import racingcar.util.Validator;
 

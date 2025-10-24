@@ -1,6 +1,4 @@
-package racingcar;
-
-import racingcar.util.Validator;
+package racingcar.util;
 
 import java.util.Arrays;
 import java.util.List;

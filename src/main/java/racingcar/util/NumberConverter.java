@@ -1,7 +1,4 @@
-package racingcar;
-
-import racingcar.util.ErrorMessage;
-import racingcar.util.Validator;
+package racingcar.util;
 
 public class NumberConverter {
 
