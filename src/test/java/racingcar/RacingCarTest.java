@@ -28,4 +28,11 @@ public class RacingCarTest {
         assertThrows(IllegalArgumentException.class, () ->
                 new Car("oniiiii"));
     }
+
+    @Test
+    void 시도횟수가_1보다_작으면_예외_발생() {
+        assertThrows(IllegalArgumentException.class, () ->
+                Validator.validateMoreThanOne(0));
+    }
+
 }
