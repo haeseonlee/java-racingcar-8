@@ -40,4 +40,10 @@ public class RacingCarTest {
         assertThrows(IllegalArgumentException.class, () ->
                 NumberConverter.convert("a"));
     }
+
+    @Test
+    void 자동차_이름이_문자가_아닌_경우_예외_발생() {
+        assertThrows(IllegalArgumentException.class, () ->
+                Validator.validateStringInput("123"));
+    }
 }
