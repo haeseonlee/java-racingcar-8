@@ -24,7 +24,7 @@ public class Validator {
     }
 
     public static void validateEndWithComma(String input) {
-        if (input.endsWith(COMMA_DELIMITER)) {
+        if (input.trim().endsWith(COMMA_DELIMITER)) {
             throw new IllegalArgumentException(ErrorMessage.END_WITH_COMMA.getMessage());
         }
     }
