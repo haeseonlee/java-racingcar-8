@@ -15,4 +15,10 @@ public class Validator {
             throw new IllegalArgumentException(ErrorMessage.TRY_NUMBER_TOO_SMALL.getMessage());
         }
     }
+
+    public static void validateStringInput(String input) {
+        if (input.matches("\\d+")) {
+            throw new IllegalArgumentException(ErrorMessage.NOT_STRING_INPUT.getMessage());
+        }
+    }
 }
