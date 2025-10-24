@@ -1,6 +1,7 @@
 package racingcar;
 
 import camp.nextstep.edu.missionutils.Randoms;
+import racingcar.util.Validator;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ public class Cars {
     private final List<Car> cars;
 
     public Cars(List<String> carNames) {
+        validateAtLeastTwoCars(carNames);
         this.cars = addCars(carNames);
     }
 
@@ -30,5 +32,9 @@ public class Cars {
             int randomNumber = Randoms.pickNumberInRange(MIN_RANDOM_NUMBER, MAX_RANDOM_NUMBER);
             car.move(randomNumber);
         }
+    }
+
+    private void validateAtLeastTwoCars(List<String> carNames) {
+        Validator.validateEnoughCars(carNames);
     }
 }
