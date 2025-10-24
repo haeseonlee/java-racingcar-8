@@ -1,8 +1,11 @@
 package racingcar.util;
 
+import java.util.List;
+
 public class Validator {
 
     private static final int MIN_TRY_NUMBER = 1;
+    private static final int MIN_CAR_COUNT = 2;
     private static final String COMMA_DELIMITER = ",";
 
     public static void validateNotEmptyInput(String input) {
@@ -26,6 +29,12 @@ public class Validator {
     public static void validateNotEndWithComma(String input) {
         if (input.trim().endsWith(COMMA_DELIMITER)) {
             throw new IllegalArgumentException(ErrorMessage.END_WITH_COMMA.getMessage());
+        }
+    }
+
+    public static void validateEnoughCars(List<String> carNames) {
+        if (carNames.size() < MIN_CAR_COUNT) {
+            throw new IllegalArgumentException(ErrorMessage.NOT_ENOUGH_CARS.getMessage());
         }
     }
 }
