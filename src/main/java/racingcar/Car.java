@@ -2,6 +2,7 @@ package racingcar;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import racingcar.util.ErrorMessage;
+import racingcar.util.Validator;
 
 public class Car {
 
@@ -13,6 +14,7 @@ public class Car {
 
     public Car(String name) {
         validateNameLength(name);
+        validateCarNameFormat(name);
         this.name = name;
     }
 
@@ -34,5 +36,9 @@ public class Car {
         if (name.length() > MAX_NAME_LENGTH) {
             throw new IllegalArgumentException(ErrorMessage.MORE_THAN_FIVE_CHAR.getMessage());
         }
+    }
+
+    private void validateCarNameFormat(String name) {
+        Validator.validateStringInput(name);
     }
 }
