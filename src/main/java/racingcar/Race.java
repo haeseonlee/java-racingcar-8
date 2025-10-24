@@ -8,7 +8,7 @@ public class Race {
         this.cars = cars;
     }
 
-    public Cars getCars() {
-        return cars;
+    public void start() {
+        cars.moveAll();
     }
 }
