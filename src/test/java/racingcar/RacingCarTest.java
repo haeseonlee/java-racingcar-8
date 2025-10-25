@@ -61,4 +61,10 @@ public class RacingCarTest {
         assertThrows(IllegalArgumentException.class, () ->
                 Validator.validateEnoughCars(List.of("pobi")));
     }
+
+    @Test
+    void 자동차_이름이_비어있는_경우_예외_발생() {
+        assertThrows(IllegalArgumentException.class, () ->
+                Validator.validateNoEmptyCarName(List.of("pobi", " ", "jun")));
+    }
 }
