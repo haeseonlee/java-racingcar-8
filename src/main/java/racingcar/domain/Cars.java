@@ -14,6 +14,7 @@ public class Cars {
 
     public Cars(List<String> carNames) {
         validateAtLeastTwoCars(carNames);
+        validateCarNamesNotEmpty(carNames);
         this.cars = addCars(carNames);
     }
 
@@ -36,5 +37,9 @@ public class Cars {
 
     private void validateAtLeastTwoCars(List<String> carNames) {
         Validator.validateEnoughCars(carNames);
+    }
+
+    private static void validateCarNamesNotEmpty(List<String> carNames) {
+        Validator.validateNoEmptyCarName(carNames);
     }
 }
