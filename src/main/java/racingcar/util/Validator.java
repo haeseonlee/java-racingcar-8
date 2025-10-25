@@ -45,4 +45,12 @@ public class Validator {
             throw new IllegalArgumentException(ErrorMessage.NOT_ENOUGH_CARS.getMessage());
         }
     }
+
+    public static void validateNoEmptyCarName(List<String> carNames) {
+        carNames.stream()
+                .filter(carName -> carName == null || carName.isBlank())
+                .forEach(carName -> {
+                    throw new IllegalArgumentException(ErrorMessage.CAR_NAME_EMPTY.getMessage());
+                });
+    }
 }
